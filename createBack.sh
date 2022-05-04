@@ -14,6 +14,9 @@ packageJson="{ \n
 
 echo -e $packageJson > package.json
 
+# Install yarn
+npm install --global yarn
+
 # Install packages
 yarn add express mysql2 dotenv http-status-codes joi cors jsonwebtoken
 yarn add -D jest eslint nodemon
