@@ -4,7 +4,6 @@
   "description": "## Package to create a basic structure to backend development",
   "main": "createBack.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "createBack": "node createBack.js"
   },
   "repository": {
