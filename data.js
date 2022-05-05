@@ -5,6 +5,7 @@ const directoriesArray = [
   'src/middlewares',
   'src/routes',
   'src/utils',
+  'src/tests',
 ];
 
 const files = [
@@ -72,6 +73,10 @@ app.listen(PORT, () => {
   {
     content: '',
     path: 'src/models/index.js',
+  },
+  {
+    content: '',
+    path: 'src/tests/index.js',
   },
   {
     content: `{
