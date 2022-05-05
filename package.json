@@ -4,7 +4,8 @@
   "description": "## Package to create a basic structure to backend development",
   "main": "createBack.js",
   "scripts": {
-    "createBack": "node createBack.js"
+    "createBack": "node createBack.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",

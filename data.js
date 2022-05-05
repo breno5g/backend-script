@@ -46,6 +46,34 @@ app.listen(PORT, () => {
     path: '.env',
   },
   {
+    content: '',
+    path: 'src/services/index.js',
+  },
+  {
+    content: '',
+    path: 'src/routes/index.js',
+  },
+  {
+    content: '',
+    path: 'src/utils/index.js',
+  },
+  {
+    content: '',
+    path: 'src/middlewares/index.js',
+  },
+  {
+    content: '',
+    path: 'src/utils/index.js',
+  },
+  {
+    content: '',
+    path: 'src/controllers/index.js',
+  },
+  {
+    content: '',
+    path: 'src/models/index.js',
+  },
+  {
     content: `{
   "env": { "node": true, "commonjs": true, "es2021": true },
   "extends": "eslint:recommended",
