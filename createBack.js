@@ -7,7 +7,7 @@ const createPackage = () => {
   const res = new Promise((resolve, reject) => {
     exec('npm init -y', (error, stdout, stderr) => {
       if (error) reject(new Error('Error: ', error));
-      if (stderr) reject(new Error('Stderr: ', stderr));
+      if (stderr) console.log('Stderr: ', stderr);
 
       console.log('package.json was created');
       console.log('Stdout: ', stdout);
@@ -24,7 +24,7 @@ const installDependencies = () => {
       'npm install express mysql2 dotenv http-status-codes joi cors jsonwebtoken',
       (error, stdout, stderr) => {
         if (error) reject(new Error('Error: ', error));
-        if (stderr) reject(new Error('Stderr: ', stderr));
+        if (stderr) console.log('Stderr: ', stderr);
         console.log('Dependencies have been installed');
         console.log('Stdout: ', stdout);
         resolve();
@@ -38,7 +38,7 @@ const installDevDependencies = async () => {
   const res = new Promise((resolve, reject) => {
     exec('npm install -D jest eslint nodemon', (error, stdout, stderr) => {
       if (error) reject(new Error('Error: ', error));
-      if (stderr) reject(new Error('Stderr: ', stderr));
+      if (stderr) console.log('Stderr: ', stderr);
       console.log('Development dependencies have been installed');
       console.log('Stdout: ', stdout);
       resolve('Dependencias de desenvolvimento instaladas');
