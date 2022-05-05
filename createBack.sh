@@ -2,14 +2,14 @@
 
 # Create package
 
-packageJson="{ \n
-  \"name\": \"teste\", \n
-  \"version\": \"1.0.0\", \n
-  \"main\": \"index.js\", \n
-  \"license\": \"MIT\", \n
+packageJson="{
+  \"name\": \"teste\",
+  \"version\": \"1.0.0\",
+  \"main\": \"index.js\",
+  \"license\": \"MIT\",
   \"scripts\": { \n
-    \"dev\": \"nodemon src/index.js\" \n
-  } \n
+    \"dev\": \"nodemon src/index.js\"
+  }
 }"
 
 echo -e $packageJson > package.json
@@ -31,14 +31,14 @@ touch src/index.js src/models/connection.js
 
 # Database Connection
 connection="
-  const mysql = require('mysql2/promise');\n
+  const mysql = require('mysql2/promise');
   \n
   const connection = mysql.createPool({ 
     host: 'localhost', 
     user: 'root', 
     password: 'docker', 
     database: 'model_example', 
-  });\n
+  });
   \n
   module.exports = connection;
 "
