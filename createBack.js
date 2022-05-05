@@ -21,7 +21,7 @@ const coloredLog = (color, str) => {
 
 // Create package
 const createPackage = () => {
-  coloredLog(color.FgYellow, 'Creating package.json');
+  coloredLog(color.FgBlue, 'Creating package.json');
   const res = new Promise((resolve, reject) => {
     exec('npm init -y', (error, stdout, stderr) => {
       if (error) reject(new Error('Error: ', error));
@@ -37,7 +37,7 @@ const createPackage = () => {
 
 // Install Dependencies
 const installDependencies = () => {
-  coloredLog(color.FgYellow, 'Installing dependencies');
+  coloredLog(color.FgBlue, 'Installing dependencies');
   const res = new Promise((resolve, reject) => {
     exec(
       'npm install express mysql2 dotenv http-status-codes joi cors jsonwebtoken',
@@ -101,7 +101,7 @@ const addDevScript = async () => {
 
 const createBackend = async () => {
   try {
-    coloredLog(color.FgYellow, 'Starting the script');
+    coloredLog(color.FgBlue, 'Starting the script');
     await createPackage();
     await installDependencies();
     await installDevDependencies();
