@@ -1,6 +1,6 @@
 {
   "name": "backend-script",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "## Package to create a basic structure to backend development",
   "main": "createBack.js",
   "scripts": {
