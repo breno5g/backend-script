@@ -67,6 +67,7 @@ const addDevScript = async () => {
   const package = await fs.readFile('package.json', 'utf-8');
   const array = JSON.parse(package);
   array.scripts.dev = 'nodemon src/index.js';
+  array.scripts.start = 'node src/index.js';
   await fs.writeFile('package.json', JSON.stringify(array, null, 2));
   console.log('Script to start the server has been added');
 };
