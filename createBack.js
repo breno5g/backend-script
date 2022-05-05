@@ -2,8 +2,26 @@ const { exec } = require('child_process');
 const fs = require('fs/promises');
 const { directoriesArray, files } = require('./data');
 
+const color = {
+  FgBlack: '\x1b[30m',
+  FgRed: '\x1b[31m',
+  FgGreen: '\x1b[32m',
+  FgYellow: '\x1b[33m',
+  FgBlue: '\x1b[34m',
+  FgMagenta: '\x1b[35m',
+  FgCyan: '\x1b[36m',
+  FgWhite: '\x1b[37m',
+  end: '\x1b[0m%s',
+};
+
+const coloredLog = (color, str) => {
+  console.log(`${color} ${str} `);
+  console.log('\x1b[0m');
+};
+
 // Create package
 const createPackage = () => {
+  coloredLog(color.FgYellow, 'Creating package.json');
   const res = new Promise((resolve, reject) => {
     exec('npm init -y', (error, stdout, stderr) => {
       if (error) reject(new Error('Error: ', error));
@@ -19,6 +37,7 @@ const createPackage = () => {
 
 // Install Dependencies
 const installDependencies = () => {
+  coloredLog(color.FgYellow, 'Installing dependencies');
   const res = new Promise((resolve, reject) => {
     exec(
       'npm install express mysql2 dotenv http-status-codes joi cors jsonwebtoken',
@@ -35,6 +54,8 @@ const installDependencies = () => {
 };
 // Install DevDependencies
 const installDevDependencies = async () => {
+  coloredLog(color.FgBlue, 'Installing development dependencies');
+
   const res = new Promise((resolve, reject) => {
     exec('npm install -D jest eslint nodemon', (error, stdout, stderr) => {
       if (error) reject(new Error('Error: ', error));
@@ -48,6 +69,8 @@ const installDevDependencies = async () => {
 };
 // Create Directories
 const createDirectories = async () => {
+  coloredLog(color.FgBlue, 'Creating directories');
+
   for (let dir of directoriesArray) {
     await fs.mkdir(dir, { recursive: true });
   }
@@ -57,6 +80,8 @@ const createDirectories = async () => {
 // Create Files
 
 const createFiles = async () => {
+  coloredLog(color.FgBlue, 'Creating files');
+
   for (let { content, path } of files) {
     await fs.writeFile(path, content);
   }
@@ -64,25 +89,28 @@ const createFiles = async () => {
 };
 
 const addDevScript = async () => {
+  coloredLog(color.FgBlue, 'Add script to start the server');
+
   const package = await fs.readFile('package.json', 'utf-8');
   const array = JSON.parse(package);
   array.scripts.dev = 'nodemon src/index.js';
   array.scripts.start = 'node src/index.js';
   await fs.writeFile('package.json', JSON.stringify(array, null, 2));
-  console.log('Script to start the server has been added');
+  coloredLog(color.FgBlue, 'Script to start the server has been added');
 };
 
 const createBackend = async () => {
   try {
+    coloredLog(color.FgYellow, 'Starting the script');
     await createPackage();
     await installDependencies();
     await installDevDependencies();
     await createDirectories();
     await createFiles();
     await addDevScript();
-    console.log(
-      "Don't forget to change the database name in the connection.js file and change the port in the.env file"
-    );
+    const str =
+      "Don't forget to change the database name in the connection.js file and change the port in the.env file";
+    coloredLog(color.FgRed, str);
   } catch (err) {
     console.log('Error: ', err);
   }
