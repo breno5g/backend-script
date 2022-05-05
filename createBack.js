@@ -87,4 +87,4 @@ const createBackend = async () => {
   }
 };
 
-createBackend();
+module.exports = createBackend;
