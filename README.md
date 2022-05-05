@@ -1,6 +1,6 @@
 # backend-script
 
-## How to use shell node version
+## How to use node version
 
 ```bash
 npx backend-script
