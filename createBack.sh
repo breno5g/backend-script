@@ -76,7 +76,7 @@ lint="
 }
 "
 
-echo -e $lint > .eslintrc.json
+echo -e $lint >> .eslintrc.json
 
 # server index
 index="
