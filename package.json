@@ -1,6 +1,6 @@
 {
   "name": "backend-script",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "## Package to create a basic structure to backend development",
   "main": "createBack.js",
   "scripts": {
@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/breno5g/backend-script#readme",
   "bin": {
-    "init": "index.js"
+    "createBack": "./createBack.js"
   }
 }
