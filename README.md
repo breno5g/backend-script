@@ -1,5 +1,11 @@
 # backend-script
 
+## What does the script do?
+
+The script was created in order to speed up the creation of the entire base for backend development.
+In it we have included "all" the basic file folder structure for the beginning of development.
+We also have some dependencies that I think are interesting for us to use in development and some development dependencies.
+
 ## How to use node version
 
 ```bash
