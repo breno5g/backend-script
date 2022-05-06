@@ -18,7 +18,7 @@ We also have some dependencies that I think are interesting for us to use in dev
 - cors 
 - jsonwebtoken
 
-### Development dependencies list
+### Development dependencies list:
 
 - jest 
 - eslint 
@@ -26,7 +26,7 @@ We also have some dependencies that I think are interesting for us to use in dev
 
 ---
 
-## How to use node version
+## How to use node version:
 
 ```bash
 npx backend-script
@@ -34,7 +34,7 @@ npx backend-script
 
 ---
 
-## How to use shell version
+## How to use shell version:
 
 ```bash
 chmod u+x createBack.sh
