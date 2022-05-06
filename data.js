@@ -92,6 +92,10 @@ app.listen(PORT, () => {
     `,
     path: '.eslintrc.json',
   },
+  {
+    content: '/src/tests',
+    path: '.eslintignore',
+  },
 ];
 
 module.exports = {
