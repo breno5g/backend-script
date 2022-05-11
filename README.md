@@ -10,18 +10,18 @@ We also have some dependencies that I think are interesting for us to use in dev
 
 ### Dependency list:
 
-- express 
-- mysql2 
-- dotenv 
-- http-status-codes 
-- joi 
-- cors 
+- express
+- mysql2
+- dotenv
+- http-status-codes
+- joi
+- cors
 - jsonwebtoken
 
 ### Development dependencies list:
 
-- jest 
-- eslint 
+- jest
+- eslint
 - nodemon
 
 ---
@@ -29,6 +29,8 @@ We also have some dependencies that I think are interesting for us to use in dev
 ## How to use node version:
 
 ```bash
+mkdir folderName
+cd folderName
 npx backend-script
 ```
 
@@ -41,5 +43,7 @@ chmod u+x createBack.sh
 ```
 
 ```bash
+mkdir folderName
+cd folderName
 ./createBack.sh
 ```
