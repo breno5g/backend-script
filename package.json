@@ -11,7 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/breno5g/backend-script.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "software architecture",
+    "api",
+    "script"
+  ],
   "author": "breno5g",
   "license": "ISC",
   "bugs": {
